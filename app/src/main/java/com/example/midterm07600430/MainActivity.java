@@ -1,7 +1,9 @@
 package com.example.midterm07600430;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +40,15 @@ public class MainActivity extends AppCompatActivity {
 			startActivity(intent);
 			finish();
 		} else {
-			Toast.makeText(this, R.string.loginFail, Toast.LENGTH_SHORT).show();
+			// Toast.makeText(this, R.string.loginFail, Toast.LENGTH_SHORT).show();
+			AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+			dialog.setTitle(R.string.loginFail);
+			dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialogInterface, int i) {
+
+				}
+			}).show();
 		}
 	}
 }
